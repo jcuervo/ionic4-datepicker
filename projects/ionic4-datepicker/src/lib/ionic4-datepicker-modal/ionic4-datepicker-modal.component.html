@@ -9,7 +9,7 @@
 
 
 <ion-content forceOverscroll="false" class="ion-no-padding" class="ionic_datepicker_modal_content">
-  <ion-grid class="dp-month-year-container"class="ion-no-padding" [ngClass]="isMonthYearSelectorOpen ? 'dp-virual-scroller-hide' : 'dp-virual-scroller-show'">
+  <ion-grid class="dp-month-year-container" [ngClass]="isMonthYearSelectorOpen ? 'dp-virual-scroller-hide' : 'dp-virual-scroller-show'">
     <ion-row>
       <ion-col size="1.5" class="dp-left-right-arrow" (click)="prevMonth()">
         <ion-button [ngClass]="{'pointer_events_none':((firstDayEpoch - 86400000) < fromDate)}">
