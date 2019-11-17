@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar *ngIf="mainObj?.showTitleLabel" (click)="changeToDateList()" class="ion-no-padding" no-border>
+<ion-header [hidden]="!mainObj?.showHeader">
+  <ion-toolbar (click)="changeToDateList()" class="ion-no-padding">
     <ion-title>
       <h1 *ngIf="mainObj?.titleLabel">{{mainObj?.titleLabel}}</h1>
       {{selectedDateString}}
@@ -79,7 +79,7 @@
   </ion-list>
 </ion-content>
 
-<ion-footer>
+<ion-footer [hidden]="!mainObj?.showFooter">
   <ion-toolbar class="ion-no-padding">
     <ion-grid class="ion-no-padding">
       <ion-row class="ion-no-padding" [ngClass]="mainObj?.btnCloseSetInReverse ? 'dp-btn-set-close-in-reverse' : ''">

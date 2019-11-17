@@ -62,6 +62,8 @@ export class DatepickerButtonPage implements OnInit {
       // yearInAscending: true,
       // btnCloseSetInReverse: true,
 
+      showHeader: false,
+
       btnProperties: {
         expand: 'block', // "block" | "full"
         fill: '', // "clear" | "default" | "outline" | "solid"

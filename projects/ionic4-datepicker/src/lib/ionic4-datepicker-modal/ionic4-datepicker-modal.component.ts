@@ -422,6 +422,7 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
 
   // Init DatePicker Object
   initDatePickerObj(config) {
+
     // const config = this.mainObj;
 
     if (config.inputDate && !this.selectedDate.date) {
@@ -441,7 +442,8 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
     objConfig.closeLabel = config.closeLabel ? config.closeLabel : 'Close';
     objConfig.disabledDates = config.disabledDates ? config.disabledDates : [];
     objConfig.titleLabel = config.titleLabel ? config.titleLabel : null;
-    objConfig.showTitleLabel = config.showTitleLabel ? config.showTitleLabel : true;
+    objConfig.showHeader = config.showHeader === undefined ? true : config.showHeader;
+    objConfig.showFooter = config.showFooter === undefined ? true : config.showFooter;
 
     objConfig.monthsList = config.monthsList ? config.monthsList : this.monthsList;
     objConfig.monthsList = [...objConfig.monthsList];
