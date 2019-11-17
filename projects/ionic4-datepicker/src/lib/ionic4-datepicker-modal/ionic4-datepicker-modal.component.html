@@ -1,12 +1,11 @@
 <ion-header>
-  <ion-toolbar (click)="changeToDateList()">
+  <ion-toolbar *ngIf="mainObj?.showTitleLabel" (click)="changeToDateList()" class="ion-no-padding" no-border>
     <ion-title>
       <h1 *ngIf="mainObj?.titleLabel">{{mainObj?.titleLabel}}</h1>
       {{selectedDateString}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content forceOverscroll="false" class="ion-no-padding" class="ionic_datepicker_modal_content">
   <ion-grid class="dp-month-year-container" [ngClass]="isMonthYearSelectorOpen ? 'dp-virual-scroller-hide' : 'dp-virual-scroller-show'">
@@ -81,7 +80,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar class="ion-no-padding">
     <ion-grid class="ion-no-padding">
       <ion-row class="ion-no-padding" [ngClass]="mainObj?.btnCloseSetInReverse ? 'dp-btn-set-close-in-reverse' : ''">
         <ion-col class="ion-no-padding">
