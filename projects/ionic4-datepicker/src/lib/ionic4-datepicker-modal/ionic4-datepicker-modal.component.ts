@@ -444,6 +444,7 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
     objConfig.titleLabel = config.titleLabel ? config.titleLabel : null;
     objConfig.showHeader = config.showHeader === undefined ? true : config.showHeader;
     objConfig.showFooter = config.showFooter === undefined ? true : config.showFooter;
+    objConfig.showDateInTitle = config.showDateInTitle === undefined ? true : config.showDateInTitle;
 
     objConfig.monthsList = config.monthsList ? config.monthsList : this.monthsList;
     objConfig.monthsList = [...objConfig.monthsList];

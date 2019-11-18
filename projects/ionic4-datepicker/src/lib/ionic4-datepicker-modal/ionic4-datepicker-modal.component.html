@@ -2,7 +2,7 @@
   <ion-toolbar (click)="changeToDateList()" class="ion-no-padding">
     <ion-title>
       <h1 *ngIf="mainObj?.titleLabel">{{mainObj?.titleLabel}}</h1>
-      {{selectedDateString}}
+      <span *ngIf="mainObj?.showDateInTitle">{{selectedDateString}}</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
