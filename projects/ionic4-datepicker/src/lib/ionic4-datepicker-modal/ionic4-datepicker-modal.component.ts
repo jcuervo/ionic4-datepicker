@@ -99,18 +99,22 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
   // Virtual scroll create for select year and month
   selectMonthYear(isMonthSelect) {
     // console.log('selectMonthYear', i);
-    this.isMonthYearSelectorOpen = true;
+    if (this.mainObj.selectMonthYear == true) {
+      this.isMonthYearSelectorOpen = true;
 
-    this.isMonthSelect = isMonthSelect;
-    this.scrollingMonthOrYearArray = isMonthSelect ? this.mainObj.monthsList : this.yearsList;
-    this.selectedYearOrMonth = isMonthSelect ? this.data.currentMonth : this.data.currentYear;
-
-    const index = this.scrollingMonthOrYearArray.indexOf(this.selectedYearOrMonth);
-    const iditem = index + 'list';
-
-    setTimeout(() => {
-      document.getElementById(iditem).scrollIntoView();
-    }, 100);
+      this.isMonthSelect = isMonthSelect;
+      this.scrollingMonthOrYearArray = isMonthSelect ? this.mainObj.monthsList : this.yearsList;
+      this.selectedYearOrMonth = isMonthSelect ? this.data.currentMonth : this.data.currentYear;
+  
+      const index = this.scrollingMonthOrYearArray.indexOf(this.selectedYearOrMonth);
+      const iditem = index + 'list';
+  
+      setTimeout(() => {
+        document.getElementById(iditem).scrollIntoView();
+      }, 100);
+    } else {
+      // ignore it, or do some other stuff 
+    }
   }
 
   // select month or year
@@ -502,9 +506,8 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
       objConfig.isSundayHighlighted.fontColor = isSundayHighlighted.fontColor ? isSundayHighlighted.fontColor : null;
     }
 
-    // month and year scroller
-    objConfig.monthScroller = config.monthScroller ? config.monthScroller : false;
-    objConfig.yearScroller = config.yearScroller ? config.yearScroller : false;
+    // month and year scroller, default to true
+    objConfig.monthYearScroller = config.monthYearScroller || true;
 
     // console.log('config =>', objConfig);
     return objConfig;

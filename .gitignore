@@ -36,3 +36,4 @@ package-lock.json
 
 dist
 projects/ionic4-datepicker/*.tgz
+.npmrc
