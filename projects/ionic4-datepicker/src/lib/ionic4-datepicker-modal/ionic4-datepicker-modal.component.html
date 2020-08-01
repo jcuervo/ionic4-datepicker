@@ -19,14 +19,14 @@
       <ion-col size="9">
         <ion-grid>
           <ion-row>
-            <ion-col class="dp-select-month-year" size="5.5" class="ion-no-padding" (click)="selectMonthYear(true)">
+            <ion-col class="dp-select-month-year" size="5.5" class="ion-no-padding" (click)="mainObj?.monthScroller || selectMonthYear(true)">
               <ion-button class="dp-buttons">
                 {{ data.currentMonth }}
                 <ion-icon name="md-arrow-dropdown" class="dp-down-arrow"></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col size="1"></ion-col>
-            <ion-col class="dp-select-month-year" size="5.5" class="ion-no-padding" (click)="selectMonthYear(false)">
+            <ion-col class="dp-select-month-year" size="5.5" class="ion-no-padding" (click)="mainObj?.yearScroller || selectMonthYear(false)">
               <ion-button class="dp-buttons">
                 {{ data.currentYear }}
                 <ion-icon name="md-arrow-dropdown" class="dp-down-arrow"></ion-icon>

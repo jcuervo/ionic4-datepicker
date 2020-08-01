@@ -502,6 +502,10 @@ export class Ionic4DatepickerModalComponent implements OnInit, OnDestroy {
       objConfig.isSundayHighlighted.fontColor = isSundayHighlighted.fontColor ? isSundayHighlighted.fontColor : null;
     }
 
+    // month and year scroller
+    objConfig.monthScroller = config.monthScroller ? config.monthScroller : false;
+    objConfig.yearScroller = config.yearScroller ? config.yearScroller : false;
+
     // console.log('config =>', objConfig);
     return objConfig;
   }
